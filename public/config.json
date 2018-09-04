@@ -1,0 +1,74 @@
+{
+    "workflowApiVersion": "1.1",
+    "metaData": {
+        "icon": "images/icon.png",
+        "iconSmall": "images/iconSmall.png",
+        "category": "message"
+    },
+    "type": "REST",
+    "lang": {
+        "en-US": {
+            "name": "Xappia",
+          "description": "Xappia",
+          "step1Label": "Configure Activity"
+        }
+    },
+    "arguments": {
+        "execute": {       
+           "inArguments":[
+				{
+              
+                }									
+			],
+          "outArguments": [],
+          "url": "https://herokuxappia.herokuapp.com/execute/",
+           "verb": "POST",
+            "body": "",
+            "header": "",
+            "format": "json",
+            "useJwt": true,
+            "timeout": 500000
+        }
+    },
+    "configurationArguments": {
+      "applicationExtensionKey": "04e03e84-b9f8-4f2e-83d6-9d300e29d08b",
+      "save": {
+        "url": "https://herokuxappia.herokuapp.com/save/",
+          "verb": "POST",
+        "useJwt": true
+       },
+       "publish": {
+        "url": "https://herokuxappia.herokuapp.com/publish/",
+           "verb": "POST",
+        "useJwt": true
+       },
+      "stop": {
+        "url": "https://herokuxappia.herokuapp.com/stop/",
+           "verb": "POST",
+        "useJwt": true
+      },
+      "validate": {
+        "url": "https://herokuxappia.herokuapp.com/validate/",
+        "verb": "POST",
+        "useJwt": true
+      }
+    },
+    "wizardSteps": [
+        { "label": "Configure Activity", "key": "step1" }
+    ],
+    "userInterfaces": {
+        "configModal": {
+            "height": 400,
+            "width": 1000,
+          "fullscreen": false
+        }
+    },
+    "schema": {
+        "arguments": {
+            "execute": {
+                "inArguments": [],
+                "outArguments": []
+            }
+        }
+    }
+}
