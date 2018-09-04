@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Xappia",
-          "description": "Xappia",
+            "name": "Whatsapp",
+          "description": "Whatsapp",
           "step1Label": "Configure Activity"
         }
     },
