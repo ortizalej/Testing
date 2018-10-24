@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xappia/mcloud-activities-mailup.git"
+    "url": "git+https://github.com/ortizalej/Testing.git"
   },
   "keywords": [
     "journey",
@@ -21,9 +21,9 @@
   "author": "Xappia",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Xappia/mcloud-activities-mailup/issues"
+    "url": "https://github.com/ortizalej/Testing/issues"
   },
-  "homepage": "https://github.com/Xappia/mcloud-activities-mailup#readme",
+  "homepage": "https://github.com/ortizalej/Testing#readme",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.6.2",
     "aws-sdk": "^2.302.0",

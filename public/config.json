@@ -37,7 +37,7 @@
                 }									
 			],
           "outArguments": [],
-          "url": "https://floating-escarpment-11495.herokuapp.com/execute/",
+          "url": "https://herokuxappia.herokuapp.com/execute/",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -47,24 +47,24 @@
         } 
     },
     "configurationArguments": {
-      "applicationExtensionKey": "e8ec3dfa-c0bf-4db1-bf91-acc827f30a6c",
+      "applicationExtensionKey": "04e03e84-b9f8-4f2e-83d6-9d300e29d08b",
       "save": {
-        "url": "https://floating-escarpment-11495.herokuapp.com/save/",
+        "url": "https://herokuxappia.herokuapp.com/save/",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {          
-        "url": "https://floating-escarpment-11495.herokuapp.com/publish/",
+        "url": "https://herokuxappia.herokuapp.com/publish/",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://floating-escarpment-11495.herokuapp.com/stop/",
+        "url": "https://herokuxappia.herokuapp.com/stop/",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://floating-escarpment-11495.herokuapp.com/validate/",
+        "url": "https://herokuxappia.herokuapp.com/validate/",
         "verb": "POST",
         "useJwt": true
       }
