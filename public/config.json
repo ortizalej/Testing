@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "Whatsapp",
-          "description": "Whatsapp",
+            "name": "MailUp SMS",
+          "description": "MailUpSms",
           "step1Label": "Configure Activity"
         }
     },
@@ -17,38 +17,54 @@
         "execute": {       
            "inArguments":[
 				{
-              
+                    "tokens": "",
+                    "messageId" : "",
+                    "phone": "",
+                    "limit":"",
+                    "field1SF":"",
+                    "field2SF":"",
+                    "field3SF":"",
+                    "field4SF":"",
+                    "field5SF":"",
+                    "field1MU":"",
+                    "field2MU":"",
+                    "field3MU":"",
+                    "field4MU":"",
+                    "field5MU":"",
+                    "referenceFields":[],
+                    "group":"",                    
+                    "trackMail": ""                                                                             
                 }									
 			],
           "outArguments": [],
-          "url": "https://herokuxappia.herokuapp.com/execute/",
+          "url": "https://floating-escarpment-11495.herokuapp.com/execute/",
            "verb": "POST",
             "body": "",
             "header": "",
             "format": "json",
             "useJwt": true,
-            "timeout": 500000
-        }
+            "timeout": 660000
+        } 
     },
     "configurationArguments": {
-      "applicationExtensionKey": "04e03e84-b9f8-4f2e-83d6-9d300e29d08b",
+      "applicationExtensionKey": "e8ec3dfa-c0bf-4db1-bf91-acc827f30a6c",
       "save": {
-        "url": "https://herokuxappia.herokuapp.com/save/",
+        "url": "https://floating-escarpment-11495.herokuapp.com/save/",
           "verb": "POST",
         "useJwt": true
        },
-       "publish": {
-        "url": "https://herokuxappia.herokuapp.com/publish/",
+       "publish": {          
+        "url": "https://floating-escarpment-11495.herokuapp.com/publish/",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://herokuxappia.herokuapp.com/stop/",
+        "url": "https://floating-escarpment-11495.herokuapp.com/stop/",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://herokuxappia.herokuapp.com/validate/",
+        "url": "https://floating-escarpment-11495.herokuapp.com/validate/",
         "verb": "POST",
         "useJwt": true
       }
@@ -58,8 +74,8 @@
     ],
     "userInterfaces": {
         "configModal": {
-            "height": 500,
-            "width": 700,
+            "height": 400,
+            "width": 1000,
           "fullscreen": false
         }
     },
