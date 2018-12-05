@@ -12,7 +12,7 @@ var activity    = require('./routes/activity');
 var app = express();
 
 // Configure Express
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 1000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,7 +33,7 @@ app.post('/validate/', activity.validate );
 app.post('/publish/', activity.publish );
 app.post('/execute/', activity.execute );
 app.post('/stop/', activity.stop);
-app.post('/wa', activity.sendWa);
+
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });

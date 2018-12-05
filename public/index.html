@@ -24,7 +24,7 @@
             require(config, dependencies);
         })();
         function save() {
-            var sendMessage = new XMLHttpRequest();
+            let sendMessage = new XMLHttpRequest();
                 sendMessage.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let responseId = JSON.parse(this.responseText)

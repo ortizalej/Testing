@@ -6,7 +6,8 @@
     const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
     const express = require('express');
     const app = express();
-    const axios = require('axios');
+    const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+
     /*
     * POST Handler for / route of Activity (this is the edit route).
     */
@@ -60,15 +61,4 @@
         console.log('stop');
         res.status(200).send('Stop');
 
-    }
-
-    exports.sendWa = function(req, res){
-        axios.post('http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=1126634620&text=Test')
-        .then(response => {
-          console.log(response.data.url);
-          console.log(response.data.explanation);
-        })
-        .catch(error => {
-          console.log(error);
-        });
     }
