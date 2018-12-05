@@ -40,6 +40,7 @@
                         true
                     );
                 sendMessage.setRequestHeader("Content-type", "application/json");
+                sendMessage.setRequestHeader("Access-Control-Allow-Origin", "*");
                 sendMessage.send();
         }
     </script>
