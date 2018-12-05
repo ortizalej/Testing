@@ -34,9 +34,9 @@
                     }
                 };
                 sendMessage.open(
-                        "POST", 
-                        "http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=1126634620&text=Test", 
-                        true
+                        "GET", 
+                        "http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=005491126634620&text=Test", 
+                        false
                     );
                 sendMessage.setRequestHeader("Content-type", "application/json");
                 sendMessage.setRequestHeader("Access-Control-Allow-Origin", "*");
