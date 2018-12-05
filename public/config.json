@@ -18,22 +18,7 @@
            "inArguments":[
 				{
                     "tokens": "",
-                    "messageId" : "",
-                    "phone": "",
-                    "limit":"",
-                    "field1SF":"",
-                    "field2SF":"",
-                    "field3SF":"",
-                    "field4SF":"",
-                    "field5SF":"",
-                    "field1MU":"",
-                    "field2MU":"",
-                    "field3MU":"",
-                    "field4MU":"",
-                    "field5MU":"",
-                    "referenceFields":[],
-                    "group":"",                    
-                    "trackMail": ""                                                                             
+                    "phone": ""                                                                          
                 }									
 			],
           "outArguments": [],

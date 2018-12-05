@@ -35,11 +35,6 @@ define([
                     console.log(phone);
                } 
             }
-            $('#var1').append(option);
-            $('#var2').append(option);
-            $('#var3').append(option);
-            $('#var4').append(option);
-            $('#var5').append(option);
             connection.trigger('ready');
 
             connection.trigger('requestTokens');
@@ -87,62 +82,12 @@ define([
         console.log(endpoints);
     }
 
-    function save() {
-        var options = [];
-        var varSF1 = '';
-        var varSF2 = '';
-        var varSF3 = '';
-        var varSF4 = '';
-        var varSF5 = '';
-        var canSend = $("#canSend").val();
-        var limit = $("#limit").val();
-        var trackMail = $("#trackMail").val();
-        var group = document.getElementById("group").innerHTML;
-        messageId = document.getElementById("messageId").innerHTML;
-        console.log(messageId);
-        $("#var1Mail option").each(function(){
-            options.push(this.value);
-        });
-        console.log(schemas);
-        for(var i = 0; i < schemas.length; i++) {
-            var split = schemas[i].key.split('.');
-            if($('#var1 option:selected').val() === split[2]) {
-                varSF1 = schemas[i].key;
-            }
-            if($('#var2 option:selected').val() === split[2]) {
-                varSF2 = schemas[i].key;
-            }
-            if($('#var3 option:selected').val() === split[2]) {
-                varSF3 = schemas[i].key;
-            }
-            if($('#var4 option:selected').val() === split[2]) {
-                varSF4 = schemas[i].key;
-            }
-            if($('#var5 option:selected').val() === split[2]) {
-                varSF5 = schemas[i].key;
-            }                                    
-            
-        }            
+    function save() {           
          
             if(canSend === 'true') {
                 payload['arguments'].execute.inArguments = [{
                     "tokens": authTokens,
-                    "messageId" : messageId,
-                    "phone": '{{' + phone + '}}',
-                    "limit" : limit,
-                    "field1SF": '{{' + varSF1 + '}}',
-                    "field2SF": '{{' + varSF2 + '}}',
-                    "field3SF": '{{' + varSF3 + '}}',
-                    "field4SF": '{{' + varSF4 + '}}',
-                    "field5SF": '{{' + varSF5 + '}}',
-                    "field1MU": $('#var1Mail option:selected').val(),
-                    "field2MU": $('#var2Mail option:selected').val(),
-                    "field3MU": $('#var3Mail option:selected').val(),
-                    "field4MU": $('#var4Mail option:selected').val(),
-                    "field5MU": $('#var5Mail option:selected').val(),
-                    "referenceFields":options,
-                    "group": group,
-                    "trackMail": trackMail
+                    "phone": '{{' + phone + '}}'
                 }];          
                 payload['metaData'].isConfigured = true;
                 connection.trigger('updateActivity', payload);      
