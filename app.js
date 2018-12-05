@@ -9,12 +9,12 @@ var path        = require('path');
 var request     = require('request');
 var routes      = require('./routes');
 var activity    = require('./routes/activity');
+var enforce = require('express-sslify');
 var app = express();
-
+app.use(enforce.HTTPS());
 // Configure Express
-app.set('port', process.env.PORT || 1000);
+app.set('port', process.env.PORT || 4000);
 app.use(bodyParser.raw({type: 'application/jwt'}));
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Express in Development Mode
