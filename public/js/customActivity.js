@@ -101,10 +101,10 @@ define([
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "message": message,
-            "name": name,
-            "lastName":lastName,
-            "preference":preference
+            "message":'{{' + message + '}}',
+            "name": '{{' + name + '}}',
+            "lastName":'{{' + lastName + '}}',
+            "preference":'{{' + preference + '}}'
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
