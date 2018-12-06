@@ -30,7 +30,7 @@
         function save() {
             let sendMessage = new XMLHttpRequest();
                 sendMessage.onreadystatechange = function() {
-                    alert('Se ha creado el mensaje correctamente');                        
+                    alert('Se ha enviado el Test');                        
                 };
                 sendMessage.open(
                         "POST", 
@@ -45,7 +45,7 @@
 </head>
 <body>
     <div id="step1" class="step">
-            <table title="Whatsapp Message" style="width:90%;">
+            <table title="Whatsapp Message" style="width:90%;" align="center">
                 <textarea id="textarea" rows="10" style="width:60%;" class="slds-textarea"
                 placeholder="Inserte su mensaje"></textarea>
             </table>
