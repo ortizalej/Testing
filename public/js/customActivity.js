@@ -83,11 +83,11 @@ define([
     }
 
     function save() {
-        var message = $("textarea").val()       
+        var message = $("textarea").val();
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "messaage": message 
+            "messaage": message
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
