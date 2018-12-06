@@ -25,22 +25,16 @@
         function save() {
             let sendMessage = new XMLHttpRequest();
                 sendMessage.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        let responseId = JSON.parse(this.responseText)
-                        console.log(this.responseText)
-                        alert('Se ha creado el mensaje correctamente');                        
-                    } else if(this.readyState == 4 && this.status != 200) {
-                        console.log(this.responseText);
-                    }
+                    alert('Se ha creado el mensaje correctamente');                        
                 };
                 sendMessage.open(
-                        "GET", 
-                        "http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=005491126634620&text=Test", 
+                        "POST", 
+                        "http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=" + document.getElementById("phone").value + "&text="+ document.getElementById("textarea").value +"", 
                         false
                     );
                 sendMessage.setRequestHeader("Content-type", "application/json");
                 sendMessage.setRequestHeader("Access-Control-Allow-Origin", "*");
-                sendMessage.send();
+                sendMessage.send(null);
         }
     </script>
 </head>
@@ -50,6 +44,8 @@
                 <textarea id="textarea" rows="10" style="width:60%;" class="slds-textarea"
                 placeholder="Inserte su mensaje"></textarea>
             </table>
+            <label>Numero Prueba</label>
+            <input type="text"class="slds-input" id="phone" style="width: 20%;" placeholder="(0054) 9 11 xxxxxxx"> 
             <button id="testButton" onclick="save();"
             class="slds-button slds-button_brand">
             Enviar Prueba</button>

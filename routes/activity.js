@@ -6,8 +6,8 @@
     const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
     const express = require('express');
     const app = express();
-    const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-
+    const request = require('request');
+   
     /*
     * POST Handler for / route of Activity (this is the edit route).
     */
@@ -40,6 +40,15 @@
 
             if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var decodedArgs = decoded.inArguments[0];
+                let sendGroup = {
+                    url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number='+ decodedArgs.phone+'&text='
+                            + decodedArgs.message + '',
+                    method: 'POST',
+                } 
+                request(sendGroup, function (error, response, body) {
+                    console.log(body);
+                    console.log(error);
+                })    
             }
             });
         };

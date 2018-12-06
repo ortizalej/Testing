@@ -83,19 +83,13 @@ define([
     }
 
     function save() {           
-         
-            if(canSend === 'true') {
-                payload['arguments'].execute.inArguments = [{
-                    "tokens": authTokens,
-                    "phone": '{{' + phone + '}}'
-                }];          
-                payload['metaData'].isConfigured = true;
-                connection.trigger('updateActivity', payload);      
-
-            } else if(canSend === 'false') {
-                alert('Presione el boton de Guardar antes de continuar');
-                onRender();     
-            } 
+        payload['arguments'].execute.inArguments = [{
+            "tokens": authTokens,
+            "phone": '{{' + phone + '}}',
+            "messaage": $("textarea").val()
+        }];          
+        payload['metaData'].isConfigured = true;
+        connection.trigger('updateActivity', payload);      
     }
 
 });

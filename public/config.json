@@ -8,8 +8,8 @@
     "type": "REST",
     "lang": {
         "en-US": {
-            "name": "MailUp SMS",
-          "description": "MailUpSms",
+            "name": "Whatsapp",
+          "description": "Whatsapp",
           "step1Label": "Configure Activity"
         }
     },
@@ -18,11 +18,12 @@
            "inArguments":[
 				{
                     "tokens": "",
-                    "phone": ""                                                                          
+                    "phone": "",
+                    "message":""                                                                        
                 }									
 			],
           "outArguments": [],
-          "url": "https://demo-xappia.herokuapp.com/execute/",
+          "url": "http://demo-xappia.herokuapp.com/execute/",
            "verb": "POST",
             "body": "",
             "header": "",
@@ -34,22 +35,22 @@
     "configurationArguments": {
       "applicationExtensionKey": "04e03e84-b9f8-4f2e-83d6-9d300e29d08b",
       "save": {
-        "url": "https://demo-xappia.herokuapp.com/save/",
+        "url": "http://demo-xappia.herokuapp.com/save/",
           "verb": "POST",
         "useJwt": true
        },
        "publish": {          
-        "url": "https://demo-xappia.herokuapp.com/publish/",
+        "url": "http://demo-xappia.herokuapp.com/publish/",
            "verb": "POST",
         "useJwt": true
        },
       "stop": {
-        "url": "https://demo-xappia.herokuapp.com/stop/",
+        "url": "http://demo-xappia.herokuapp.com/stop/",
            "verb": "POST",
         "useJwt": true
       },
       "validate": {
-        "url": "https://demo-xappia.herokuapp.com/validate/",
+        "url": "http://demo-xappia.herokuapp.com/validate/",
         "verb": "POST",
         "useJwt": true
       }
