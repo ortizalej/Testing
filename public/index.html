@@ -34,7 +34,7 @@
                 };
                 sendMessage.open(
                         "POST", 
-                        "http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=" + document.getElementById("phone").value + "&text="+ document.getElementById("textarea").value +"", 
+                        "https://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=" + document.getElementById("phone").value + "&text="+ document.getElementById("textarea").value +"", 
                         false
                     );
                 sendMessage.setRequestHeader("Content-type", "application/json");
