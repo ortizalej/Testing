@@ -97,13 +97,14 @@ define([
 
     function save() {
         var message = $("#textarea").val()
+        console.log(message)
         var name = $("#Name").val()  
         var lastName = $("#LastName").val()
         var preference = $("#Preference").val()           
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "messaage": message,
+            "message": message,
             "name": name,
             "lastName":lastName,
             "preference":preference
