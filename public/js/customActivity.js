@@ -29,7 +29,7 @@ define([
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
-                console.log(data['schema'][i]);
+                console.log(split)
                 if(data['schema'][i].type === 'Phone'){
                     phone = data['schema'][i].key;
                     console.log(phone);
