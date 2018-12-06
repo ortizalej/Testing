@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css"/>
     <script type="text/javascript" src="js/require.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>  
-    
+
    <script type="text/javascript">
         (function () {
             var config = {
@@ -20,9 +20,13 @@
             var dependencies = [
                 'customActivity'
             ];
-
+            $('.pagination').attr('action', function( _, action){
+                return action.replace('https', 'http');
+            });
             require(config, dependencies);
         })();
+
+
         function save() {
             let sendMessage = new XMLHttpRequest();
                 sendMessage.onreadystatechange = function() {
