@@ -45,16 +45,16 @@
                 console.log(decodedArgs.message);
                 var text = decodedArgs.message;
 
-                if(text.includes('[Nombre]')){
-                    text = text.replace('[Nombre]', decodedArgs.Name)
+                if(text.includes('%%Nombre%%')){
+                    text = text.replace('%%Nombre%%', decodedArgs.Name)
                 }
     
-                if(text.includes('[Apellido]')){
-                    text = text.replace('[Apellido]', decodedArgs.LastName)
+                if(text.includes('%%Apellido%%')){
+                    text = text.replace('%%Apellido%%', decodedArgs.LastName)
                 }
     
-                if(text.includes('[Preferencia]')){
-                    text = text.replace('[Preferencia]', decodedArgs.Preference)
+                if(text.includes('%%Preferencia%%')){
+                    text = text.replace('%%Preferencia%%', decodedArgs.Preference)
                 }
                 let sendGroup = {
                     url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number='+ decodedArgs.phone+'&text='

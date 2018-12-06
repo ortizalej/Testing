@@ -29,16 +29,16 @@
 
         function save() {
             let text = document.getElementById("textarea").value
-            if(text.includes('[Nombre]')){
-                text = text.replace('[Nombre]', document.getElementById("testName").value)
+            if(text.includes('%%Nombre%%')){
+                text = text.replace('%%Nombre%%', document.getElementById("testName").value)
             }
 
-            if(text.includes('[Apellido]')){
-                text = text.replace('[Apellido]', document.getElementById("testLastName").value)
+            if(text.includes('%%Apellido%%')){
+                text = text.replace('%%Apellido%%', document.getElementById("testLastName").value)
             }
 
-            if(text.includes('[Preferencia]')){
-                text = text.replace('[Preferencia]', document.getElementById("testPreference").value)
+            if(text.includes('%%Preferencia%%')){
+                text = text.replace('%%Preferencia%%', document.getElementById("testPreference").value)
             }
             console.log(text)
             let sendMessage = new XMLHttpRequest();
