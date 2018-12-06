@@ -41,6 +41,8 @@
 
             if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var decodedArgs = decoded.inArguments[0];
+                console.log(decodedArgs.phone)
+                console.log(decodedArgs.message);
                 let sendGroup = {
                     url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number='+ decodedArgs.phone+'&text='
                             + decodedArgs.message + '',
@@ -49,6 +51,7 @@
                 request(sendGroup, function (error, response, body) {
                     console.log(body);
                     console.log(error);
+                    res.status(200).end();
                 })    
             }
             });
