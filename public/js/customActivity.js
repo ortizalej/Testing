@@ -82,11 +82,12 @@ define([
         console.log(endpoints);
     }
 
-    function save() {           
+    function save() {
+        var message = $("textarea").val()       
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "messaage": $("textarea").val()
+            "messaage": message 
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
