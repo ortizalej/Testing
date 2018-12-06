@@ -19,7 +19,10 @@
 				{
                     "tokens": "",
                     "phone": "",
-                    "message":""                                                                       
+                    "message":"",
+                    "name":"",
+                    "lastName":"",
+                    "preference":""                                                                       
                 }									
 			],
           "outArguments": [],

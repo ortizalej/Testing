@@ -29,8 +29,8 @@ define([
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
-                option += '<option value="'+ split[2] + '">' + split[2] + '</option>';   
-               if(data['schema'][i].type === 'Phone'){
+                console.log(data['schema'][i]);
+                if(data['schema'][i].type === 'Phone'){
                     phone = data['schema'][i].key;
                     console.log(phone);
                } 
@@ -83,11 +83,17 @@ define([
     }
 
     function save() {
-        var message = $("textarea").val();
+        var message = $("#textarea").val()
+        var name = $("#Name").val()  
+        var lastName = $("#LastName").val()
+        var preference = $("#Preference").val()           
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "messaage": message
+            "messaage": message,
+            "name": name,
+            "lastName":lastName,
+            "preference":preference
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
