@@ -8,8 +8,9 @@ define([
     var authTokens = {};
     var payload = {};
     var phone;
-    var messageId = '';
-    var option = '';        
+    var name;
+    var lastName;
+    var preference;        
     var schemas = [];  
     $(window).ready(onRender);
     
@@ -30,11 +31,23 @@ define([
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
                 console.log(split)
-                if(data['schema'][i].type === 'Phone'){
+                if(split[2] === 'Phone'){
                     phone = data['schema'][i].key;
-                    console.log(phone);
-               } 
+               } else if(split[2] === 'Name'){
+                    name = data['schema'][i].key;
+
+               } else if(split[2] === 'LastName'){
+                    lastName = data['schema'][i].key;
+
+                } else if(split[2] === 'Preference'){
+                    preference = data['schema'][i].key;
+                } 
             }
+
+            console.log(name)
+            console.log(lastName)
+            console.log(preference)
+            console.log(phone)
             connection.trigger('ready');
 
             connection.trigger('requestTokens');
