@@ -33,7 +33,7 @@
         } 
     },
     "configurationArguments": {
-      "applicationExtensionKey": "04e03e84-b9f8-4f2e-83d6-9d300e29d08b",
+      "applicationExtensionKey": "a1508bee-4924-4b74-84ea-1881fbed636e",
       "save": {
         "url": "http://demo-xappia.herokuapp.com/save/",
           "verb": "POST",
