@@ -62,7 +62,7 @@
                 }
                 let sendGroup = {
                     url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number='+ decodedArgs.phone+'&text='
-                            + text + '',
+                            + unescape(encodeURIComponent(text)) + '',
                     method: 'POST',
                 } 
                 request(sendGroup, function (error, response, body) {
