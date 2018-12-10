@@ -33,7 +33,7 @@ define([
                 console.log(split)
                 if(split[2] === 'Phone'){
                     phone = data['schema'][i].key;
-               } else if(split[2] === 'Name'){
+               } else if(split[2] === 'FirstName'){
                     name = data['schema'][i].key;
 
                } else if(split[2] === 'LastName'){
