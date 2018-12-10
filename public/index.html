@@ -47,7 +47,7 @@
                 };
                 sendMessage.open(
                         "POST", 
-                        "https://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=" + document.getElementById("phone").value + "&text="
+                        "https://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=00549" + document.getElementById("phone").value + "&text="
                         + text +"", 
                         false
                     );
@@ -64,7 +64,7 @@
                 placeholder="Inserte su mensaje"></textarea>
             </table>
             <label>Numero Prueba</label>
-            <input type="text"class="slds-input" id="phone" style="width: 20%;" placeholder="(0054) 9 11 xxxxxxx"> 
+            <input type="text"class="slds-input" id="phone" style="width: 20%;" placeholder="Ingrege un movil"> 
             <button id="testButton" onclick="save();"
             class="slds-button slds-button_brand">
             Enviar Prueba</button>

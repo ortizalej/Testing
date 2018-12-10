@@ -61,7 +61,7 @@
                     text = text.replace('%%Preferencia%%', decodedArgs.preference)
                 }
                 let sendGroup = {
-                    url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number='+ decodedArgs.phone+'&text='
+                    url: 'http://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=00549'+ decodedArgs.phone+'&text='
                             + unescape(encodeURIComponent(text)) + '',
                     method: 'POST',
                 } 
