@@ -31,6 +31,7 @@ define([
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
                 console.log(split)
+                console.log(split[2])
                 if(split[2] === 'CampaignMember:Common:MobilePhone'){
                     phone = data['schema'][i].key;
                } else if(split[2] === 'firstName'){
