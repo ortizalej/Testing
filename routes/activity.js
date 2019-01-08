@@ -74,6 +74,7 @@
                 })    
             }
             });*/
+        })
         };
     /*
     * POST Handler for /publish/ route of Activity.
