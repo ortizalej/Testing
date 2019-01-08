@@ -42,6 +42,8 @@
             if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var decodedArgs = decoded.inArguments[0];
                 console.log(decodedArgs.phone)
+            }
+                /*console.log(decodedArgs.phone)
                 console.log(decodedArgs.message);
                 console.log(decodedArgs.name);
                 console.log(decodedArgs.lastName);
@@ -71,7 +73,7 @@
                     res.status(200).end();
                 })    
             }
-            });
+            });*/
         };
     /*
     * POST Handler for /publish/ route of Activity.
