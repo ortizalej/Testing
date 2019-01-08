@@ -97,7 +97,8 @@ define([
 
     function save() {
         var message = $("#textarea").val()
-        console.log(message)         
+        console.log(message)
+        console.log(phone)   
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
