@@ -32,8 +32,10 @@ define([
                 var split = data['schema'][i].key.split('.');
                 console.log(split)
                 console.log(split[2])
+                '{{Event.' + eventDefinitionKey + '.\"' + idField + '\"}}'
+                
                 if(split[2] === 'CampaignMember:Common:MobilePhone'){
-                    phone = split[0] + '.' +  split[2];
+                    phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
                } else if(split[2] === 'firstName'){
                     name = data['schema'][i].key;
 
@@ -86,7 +88,6 @@ define([
             visible: true,
         });
     }
-
     function onGetTokens(tokens) {
         console.log(tokens);
         authTokens = tokens;
