@@ -33,7 +33,7 @@ define([
                 console.log(split)
                 console.log(split[2])
                 if(split[2] === 'CampaignMember:Common:MobilePhone'){
-                    phone = split[0] + '.' +  split[1] + '.MobilePhone';
+                    phone = split[0] + '.' +  split[2];
                } else if(split[2] === 'firstName'){
                     name = data['schema'][i].key;
 
