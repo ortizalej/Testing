@@ -43,7 +43,7 @@
                 var decodedArgs = decoded.inArguments[0];
                 console.log(decodedArgs.phone)
             }
-                /*console.log(decodedArgs.phone)
+                console.log(decodedArgs.phone)
                 console.log(decodedArgs.message);
                 console.log(decodedArgs.name);
                 console.log(decodedArgs.lastName);
