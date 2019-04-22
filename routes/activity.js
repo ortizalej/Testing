@@ -71,9 +71,14 @@
                     res.status(200).end();
                 })
             }
+<<<<<<< HEAD
         });
 
     };
+=======
+            });
+        };
+>>>>>>> 0909de8e4a481a9ef2a28923ee65e85ea09bc096
     /*
      * POST Handler for /publish/ route of Activity.
      */
