@@ -7,11 +7,11 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css"/>
+    <link rel="stylesheet" href="css/@salesforce-ux/design-system/assets/styles/salesforce-lightning-design-system.css" />
     <script type="text/javascript" src="js/require.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>  
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
 
-   <script type="text/javascript">
+    <script type="text/javascript">
         (function () {
             var config = {
                 baseUrl: 'js'
@@ -20,7 +20,7 @@
             var dependencies = [
                 'customActivity'
             ];
-            $('.pagination').attr('action', function( _, action){
+            $('.pagination').attr('action', function (_, action) {
                 return action.replace('https', 'http');
             });
             require(config, dependencies);
@@ -29,72 +29,60 @@
 
         function save() {
             let text = document.getElementById("textarea").value
-            if(text.includes('%%Nombre%%')){
+            if (text.includes('%%Nombre%%')) {
                 text = text.replace('%%Nombre%%', document.getElementById("testName").value)
             }
 
-            if(text.includes('%%Apellido%%')){
+            if (text.includes('%%Apellido%%')) {
                 text = text.replace('%%Apellido%%', document.getElementById("testLastName").value)
             }
 
-            if(text.includes('%%Preferencia%%')){
+            if (text.includes('%%Preferencia%%')) {
                 text = text.replace('%%Preferencia%%', document.getElementById("testPreference").value)
             }
             console.log(text)
             let sendMessage = new XMLHttpRequest();
-                sendMessage.onreadystatechange = function() {
-                    alert('Se ha enviado el Test');                        
-                };
-                sendMessage.open(
-                        "POST", 
-                        "https://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=00549" + document.getElementById("phone").value + "&text="
-                        + text +"", 
-                        false
-                    );
-                sendMessage.setRequestHeader("Content-type", "application/json");
-                sendMessage.setRequestHeader("Access-Control-Allow-Origin", "*");
-                sendMessage.send(JSON.stringify(null));
+            sendMessage.onreadystatechange = function () {
+                alert('Se ha enviado el Test');
+            };
+            sendMessage.open(
+                "POST",
+                "https://panel.apiwha.com/send_message.php?apikey=UKKEOBPZ0JN3SSVZ0ZRF&number=00549" + document.getElementById(
+                    "phone").value + "&text=" +
+                text + "",
+                false
+            );
+            sendMessage.setRequestHeader("Content-type", "application/json");
+            sendMessage.setRequestHeader("Access-Control-Allow-Origin", "*");
+            sendMessage.send(JSON.stringify(null));
         }
     </script>
 </head>
+
 <body>
     <div id="step1" class="step">
-            <table title="Whatsapp Message" style="width:90%;" align="center">
-                <textarea id="textarea" rows="10" style="width:60%;" class="slds-textarea"
-                placeholder="Inserte su mensaje"></textarea>
-            </table>
-            <label>Numero Prueba</label>
-            <input type="text"class="slds-input" id="phone" style="width: 20%;" placeholder="Ingrege un movil"> 
-            <button id="testButton" onclick="save();"
-            class="slds-button slds-button_brand">
+        <table title="Whatsapp Message" style="width:90%;" align="center">
+            <textarea id="textarea" rows="10" style="width:60%;" class="slds-textarea" placeholder="Inserte su mensaje"></textarea>
+        </table>
+        <label>Numero Prueba</label>
+        <input type="text" class="slds-input" id="phone" style="width: 20%;" placeholder="Ingrege un movil">
+        <button id="testButton" onclick="save();" class="slds-button slds-button_brand">
             Enviar Prueba</button>
-            <table title="Variables de Prueba" style="width:90%;">
-                
-                <tr>
-                    <td style="padding-top: 13px;">
-                        *Las variables Dinamicas son las siguientes, y los campos son para testing:
-                    </td>
-                </tr>
-                <tr>        
-                    <td style="padding-top: 13px;">
-                        <label>Nombre</label>
-                        <input type="text"class="slds-input" id="testName" style="width: 20%;" placeholder="Inserte Nombre"> 
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding-top: 13px;">
-                        <label>Apellido</label>
-                        <input type="text"class="slds-input" id="testLastName" style="width: 20%;" placeholder="Inserte Apellido"> 
-                    </td>
-                </tr>
-                <tr>    
-                    <td style="padding-top: 13px;">
-                        <label>Preferencia </label>
-                        <input type="text"class="slds-input" id="testPreference" style="width: 20%;" placeholder="Inserte Preferencia"> 
-                    </td>
-                </tr>
-            </table>
-                
+        <table title="Variables de Prueba" style="width:90%;">
+
+            <tr>
+                <td style="padding-top: 13px;">
+                    *Las variables Dinamicas son las siguientes, y los campos son para testing:
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-top: 13px;">
+                    <label>Variable 1</label>
+                    <input type="text" class="slds-input" id="testName" style="width: 20%;" placeholder="Inserte Nombre">
+                </td>
+
+        </table>
+
     </div>
 </body>
 

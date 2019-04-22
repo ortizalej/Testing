@@ -30,6 +30,7 @@ define([
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
+                document.body.innerHTML = "<h1>Today's date is</h1>"
                 console.log(split)
                 console.log(split[2])                
                 if(split[2] === 'Phone'){
@@ -44,11 +45,6 @@ define([
                     preference = data['schema'][i].key;
                 } 
             }
-
-            console.log(name)
-            console.log(lastName)
-            console.log(preference)
-            console.log(phone)
             connection.trigger('ready');
 
             connection.trigger('requestTokens');
