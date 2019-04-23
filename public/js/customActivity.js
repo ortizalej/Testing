@@ -24,26 +24,21 @@ define([
 
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function (data) {
-            
+            phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
+            let variables = document.getElementById("variable").split(',');
+            let variableActivity = [];
             // save schema
             schemas = data['schema'];
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
                 var split = data['schema'][i].key.split('.');
-                document.body.innerHTML = "<h1>Today's date is</h1>"
                 console.log(split)
-                console.log(split[2])                
-                if(split[2] === 'Phone'){
-                    phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
-               } else if(split[2] === 'firstName'){
-                    name = data['schema'][i].key;
-
-               } else if(split[2] === 'LastName'){
-                    lastName = data['schema'][i].key;
-
-                } else if(split[2] === 'Preference'){
-                    preference = data['schema'][i].key;
-                } 
+                console.log(split[2])  
+                let variable = variables.find(function(element){
+                    return element == split[2]
+                })
+                console.log(variable)
+                variableActivity.push( split[0] + '.' +  split[1] +'.\"' + split[2] + '\"')           
             }
             connection.trigger('ready');
 
@@ -99,9 +94,7 @@ define([
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
             "message": message ,
-            "name": '{{' + name + '}}',
-            "lastName":'{{' + lastName + '}}',
-            "preference":'{{' + preference + '}}'
+            "variables": variableActivity
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
