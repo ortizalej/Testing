@@ -41,14 +41,8 @@
 
             if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var decodedArgs = decoded.inArguments[0];
-                console.log(decodedArgs.phone)
-                console.log(decodedArgs.message);
-                console.log(decodedArgs.name);
-                console.log(decodedArgs.lastName);
-                console.log(decodedArgs.preference);
-                var text = decodedArgs.message;
-                console.log(text);
-                if (text.includes('%%Nombre%%')) {
+                console.log(decodedArgs.variableActivity)
+                /*if (text.includes('%%Nombre%%')) {
                     text = text.replace('%%Nombre%%', decodedArgs.name)
                 }
 
@@ -69,7 +63,7 @@
                     console.log(body);
                     console.log(error);
                     res.status(200).end();
-                })
+                })*/
             }
         });
     };
