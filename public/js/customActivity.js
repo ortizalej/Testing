@@ -24,7 +24,6 @@ define([
 
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function (data) {
-            phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
             let variables = document.getElementById("variable").split(',');
             let variableActivity = [];
             // save schema
