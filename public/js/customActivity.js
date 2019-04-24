@@ -98,7 +98,6 @@ define([
         if(variable5 != ""){
             message.replace('%%'+ variable5 + '%%', mapLabelValue.get(variable5))
         }
-        console.log(variableMC1)
         console.log(message)
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
