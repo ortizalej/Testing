@@ -88,7 +88,7 @@ define([
         let variableMC4;
         let variableMC5;
         for(var i = 0; i < variableActivity.length; i++){
-            if(variable[i].includes(variable1)){
+            if(variableActivity[i].includes(variable1)){
                 variableMC1 = 'hola {{'+ variable[i] +'}}'
             }
             if(variable[i].includes(variable2)){
