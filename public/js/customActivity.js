@@ -85,6 +85,7 @@ define([
         let variable5 = document.getElementById("variable5").value
         if(variable1 != ""){
             console.log('paso', mapLabelValue.get(variable1));
+            console.log('%%'+ variable1 + '%%');
             message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
             console.log(message)            
         }
