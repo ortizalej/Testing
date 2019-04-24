@@ -20,7 +20,11 @@
                     "tokens": "",
                     "phone": "",
                     "message":"",
-                    "variables":[]                    
+                    "variable1":"",
+                    "variable2":"",
+                    "variable3":"",
+                    "variable4":"",
+                    "variable5":""                   
                 }									
 			],
           "outArguments": [],
