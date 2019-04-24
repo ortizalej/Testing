@@ -76,11 +76,11 @@ define([
     }
 
     function save() {
-        let variable1 = document.getElementById("variable").innerHTML
-        let variable2 = document.getElementById("variable").innerHTML
-        let variable3 = document.getElementById("variable").innerHTML
-        let variable4 = document.getElementById("variable").innerHTML
-        let variable5 = document.getElementById("variable").innerHTML
+        let variable1 = document.getElementById("variable1").value
+        let variable2 = document.getElementById("variable2").value
+        let variable3 = document.getElementById("variable3").value
+        let variable4 = document.getElementById("variable4").value
+        let variable5 = document.getElementById("variable5").value
         let variableMC1;
         let variableMC2;
         let variableMC3;
