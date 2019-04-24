@@ -89,19 +89,19 @@ define([
         let variableMC5;
         for(var i = 0; i < variableActivity.length; i++){
             if(variableActivity[i].includes(variable1)){
-                variableMC1 = 'hola {{'+ variable[i] +'}}'
+                variableMC1 = 'hola {{'+ variableActivity[i] +'}}'
             }
             if(variable[i].includes(variable2)){
-                variableMC2 = '{{'+ variable[i] +'}}'
+                variableMC2 = '{{'+ variableActivity[i] +'}}'
             }
             if(variable[i].includes(variable3)){
-                variableMC3 = '{{'+ variable[i] +'}}'
+                variableMC3 = '{{'+ variableActivity[i] +'}}'
             }
             if(variable[i].includes(variable4)){
-                variableMC4 = '{{'+ variable[i] +'}}'
+                variableMC4 = '{{'+ variableActivity[i] +'}}'
             }
             if(variable[i].includes(variable5)){
-                variableMC5 = '{{'+ variable[i] +'}}'
+                variableMC5 = '{{'+ variableActivity[i] +'}}'
             }
 
         }
