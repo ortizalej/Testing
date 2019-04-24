@@ -91,16 +91,16 @@ define([
             if(variableActivity[i].includes(variable1)){
                 variableMC1 = 'hola {{'+ variableActivity[i] +'}}'
             }
-            if(variable[i].includes(variable2)){
+            if(variableActivity[i].includes(variable2)){
                 variableMC2 = '{{'+ variableActivity[i] +'}}'
             }
-            if(variable[i].includes(variable3)){
+            if(variableActivity[i].includes(variable3)){
                 variableMC3 = '{{'+ variableActivity[i] +'}}'
             }
-            if(variable[i].includes(variable4)){
+            if(variableActivity[i].includes(variable4)){
                 variableMC4 = '{{'+ variableActivity[i] +'}}'
             }
-            if(variable[i].includes(variable5)){
+            if(variableActivity[i].includes(variable5)){
                 variableMC5 = '{{'+ variableActivity[i] +'}}'
             }
 
