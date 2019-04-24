@@ -8,6 +8,8 @@ define([
     var authTokens = {};
     var payload = {};    
     var schemas = [];  
+    let variableActivity = [];
+    
     $(window).ready(onRender);
     
     connection.on('initActivity', initialize);
@@ -20,7 +22,6 @@ define([
 
         connection.trigger('requestSchema');
         connection.on('requestedSchema', function (data) {
-            let variableActivity = [];
             // save schema
             schemas = data['schema'];
             console.log(schemas);
