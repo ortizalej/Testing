@@ -29,7 +29,7 @@ define([
                 mapLabelValue.set(data['schema'][i].key.split('.')[2],data['schema'][i].key);           
             }
             
-            console.log(variableActivity)
+            console.log(mapLabelValue);
             connection.trigger('ready');
 
             connection.trigger('requestTokens');
@@ -84,7 +84,7 @@ define([
         let variable4 = document.getElementById("variable4").value
         let variable5 = document.getElementById("variable5").value
         if(variable1 != ""){
-            console.log('paso', variable1);
+            console.log('paso', mapLabelValue.get(variable1));
             message.replace('%%'+ variable1 + '%%', mapLabelValue.get(variable1))
         }
         if(variable2 != ""){
