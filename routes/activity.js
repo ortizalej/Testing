@@ -41,7 +41,7 @@
 
             if (decoded && decoded.inArguments && decoded.inArguments.length > 0) {
                 var decodedArgs = decoded.inArguments[0];
-                console.log(decodedArgs.variable1)
+                console.log(decodedArgs.message)
                 /*if (text.includes('%%Nombre%%')) {
                     text = text.replace('%%Nombre%%', decodedArgs.name)
                 }

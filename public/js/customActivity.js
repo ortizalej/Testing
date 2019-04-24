@@ -9,7 +9,7 @@ define([
     var payload = {};    
     var schemas = [];  
     let variableActivity = [];
-    
+    let mapLabelValue = new Map();
     $(window).ready(onRender);
     
     connection.on('initActivity', initialize);
@@ -26,7 +26,7 @@ define([
             schemas = data['schema'];
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
-                variableActivity.push(data['schema'][i].key)           
+                mapLabelValue.set(data['schema'][i].key.split('.')[2],data['schema'][i].key);           
             }
             
             console.log(variableActivity)
@@ -77,47 +77,33 @@ define([
     }
 
     function save() {
+        var message = $("#textarea").val()        
         let variable1 = document.getElementById("variable1").value
         let variable2 = document.getElementById("variable2").value
         let variable3 = document.getElementById("variable3").value
         let variable4 = document.getElementById("variable4").value
         let variable5 = document.getElementById("variable5").value
-        let variableMC1;
-        let variableMC2;
-        let variableMC3;
-        let variableMC4;
-        let variableMC5;
-        console.log(variableActivity)
-        for(var i = 0; i < variableActivity.length; i++){
-            if(variableActivity[i].includes(variable1)){
-                variableMC1 = 'hola {{'+ variableActivity[i] +'}}'
-            }
-            if(variableActivity[i].includes(variable2)){
-                variableMC2 = '{{'+ variableActivity[i] +'}}'
-            }
-            if(variableActivity[i].includes(variable3)){
-                variableMC3 = '{{'+ variableActivity[i] +'}}'
-            }
-            if(variableActivity[i].includes(variable4)){
-                variableMC4 = '{{'+ variableActivity[i] +'}}'
-            }
-            if(variableActivity[i].includes(variable5)){
-                variableMC5 = '{{'+ variableActivity[i] +'}}'
-            }
-
+        if(variable1 != ""){
+            message.replace('%%'+ variable1 + '%%', mapLabelValue.get(variable1))
+        }
+        if(variable2 != ""){
+            message.replace('%%'+ variable2 + '%%', mapLabelValue.get(variable2))
+        }
+        if(variable3 != ""){
+            message.replace('%%'+ variable3 + '%%', mapLabelValue.get(variable3))
+        }
+        if(variable4 != ""){
+            message.replace('%%'+ variable4 + '%%', mapLabelValue.get(variable4))
+        }
+        if(variable5 != ""){
+            message.replace('%%'+ variable5 + '%%', mapLabelValue.get(variable5))
         }
         console.log(variableMC1)
-        var message = $("#textarea").val()
         console.log(message)
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "message": message ,
-            "variable1":variableMC1,
-            "variable2":variableMC2,
-            "variable3":variableMC3,
-            "variable4":variableMC4,
-            "variable5":variableMC5,
+            "message": message
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
