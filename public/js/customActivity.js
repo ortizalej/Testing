@@ -87,6 +87,7 @@ define([
         let variableMC3;
         let variableMC4;
         let variableMC5;
+        console.log(variableActivity)
         for(var i = 0; i < variableActivity.length; i++){
             if(variableActivity[i].includes(variable1)){
                 variableMC1 = 'hola {{'+ variableActivity[i] +'}}'
@@ -105,10 +106,9 @@ define([
             }
 
         }
-     
+        console.log(variableMC1)
         var message = $("#textarea").val()
         console.log(message)
-        console.log(phone)   
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
