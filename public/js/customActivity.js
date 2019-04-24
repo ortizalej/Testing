@@ -85,21 +85,21 @@ define([
         let variable5 = document.getElementById("variable5").value
         if(variable1 != ""){
             console.log('paso', mapLabelValue.get(variable1));
-            message.replace('%%'+ variable1 + '%%', mapLabelValue.get(variable1))
+            message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
+            console.log(message)            
         }
         if(variable2 != ""){
-            message.replace('%%'+ variable2 + '%%', mapLabelValue.get(variable2))
+            message.replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
         }
         if(variable3 != ""){
-            message.replace('%%'+ variable3 + '%%', mapLabelValue.get(variable3))
+            message.replace('%%'+ variable3 + '%%', '{{' +  mapLabelValue.get(variable3) + '}}')
         }
         if(variable4 != ""){
-            message.replace('%%'+ variable4 + '%%', mapLabelValue.get(variable4))
+            message.replace('%%'+ variable4 + '%%','{{' +   mapLabelValue.get(variable4) + '}}')
         }
         if(variable5 != ""){
-            message.replace('%%'+ variable5 + '%%', mapLabelValue.get(variable5))
+            message.replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
         }
-        console.log(message)
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
