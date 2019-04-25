@@ -86,9 +86,7 @@ define([
         if(variable1 != ""){
             console.log('paso', mapLabelValue.get(variable1));
             console.log('%%'+ variable1 + '%%');
-            console.log(message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}'))        
             $("#textarea").val().replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
-            console.log(message)            
         }
         if(variable2 != ""){
             $("#textarea").val().replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
