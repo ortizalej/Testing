@@ -27,6 +27,7 @@ define([
             schemas = data['schema'];
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
+                var split = data['schema'][i].key.split('.');                
                 mapLabelValue.set(data['schema'][i].key.split('.')[2],data['schema'][i].key);
                 if(data['schema'][i].type === 'Phone'){
                     phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
