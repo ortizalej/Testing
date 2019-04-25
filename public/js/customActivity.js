@@ -84,32 +84,27 @@ define([
         let variable4 = document.getElementById("variable4").value
         let variable5 = document.getElementById("variable5").value
         let message = document.getElementById("textarea").value
-        console.log(message);
-        message = message.replace(variable1, '{{' +  mapLabelValue.get(variable1) + '}}')
-        console.log(message)
         if(variable1 != ""){
-            console.log('paso', mapLabelValue.get(variable1));
-            console.log('%%'+ variable1 + '%%');
-            $("#textarea").val().replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
+            message = message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
             console.log()
         }
         if(variable2 != ""){
-            $("#textarea").val().replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
+            message = message.replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
         }
         if(variable3 != ""){
-            $("#textarea").val().replace('%%'+ variable3 + '%%', '{{' +  mapLabelValue.get(variable3) + '}}')
+            message = message.replace('%%'+ variable3 + '%%', '{{' +  mapLabelValue.get(variable3) + '}}')
         }
         if(variable4 != ""){
-            $("#textarea").val().replace('%%'+ variable4 + '%%','{{' +   mapLabelValue.get(variable4) + '}}')
+            message = message.replace('%%'+ variable4 + '%%','{{' +   mapLabelValue.get(variable4) + '}}')
         }
         if(variable5 != ""){
-            $("#textarea").val().replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
+            message = message.replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
         }
         console.log($("#textarea").val())
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "message": $("#textarea").val()
+            "message": message
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
