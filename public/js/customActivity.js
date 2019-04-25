@@ -77,7 +77,7 @@ define([
     }
 
     function save() {
-        var message = $("#textarea").val()        
+         
         let variable1 = document.getElementById("variable1").value
         let variable2 = document.getElementById("variable2").value
         let variable3 = document.getElementById("variable3").value
@@ -86,25 +86,26 @@ define([
         if(variable1 != ""){
             console.log('paso', mapLabelValue.get(variable1));
             console.log('%%'+ variable1 + '%%');
-            message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
+            console.log(message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}'))        
+            $("#textarea").val().replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
             console.log(message)            
         }
         if(variable2 != ""){
-            message.replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
+            $("#textarea").val().replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
         }
         if(variable3 != ""){
-            message.replace('%%'+ variable3 + '%%', '{{' +  mapLabelValue.get(variable3) + '}}')
+            $("#textarea").val().replace('%%'+ variable3 + '%%', '{{' +  mapLabelValue.get(variable3) + '}}')
         }
         if(variable4 != ""){
-            message.replace('%%'+ variable4 + '%%','{{' +   mapLabelValue.get(variable4) + '}}')
+            $("#textarea").val().replace('%%'+ variable4 + '%%','{{' +   mapLabelValue.get(variable4) + '}}')
         }
         if(variable5 != ""){
-            message.replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
+            $("#textarea").val().replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
         }
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
-            "message": message
+            "message": $("#textarea").val()
         }];          
         payload['metaData'].isConfigured = true;
         connection.trigger('updateActivity', payload);      
