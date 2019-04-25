@@ -9,6 +9,7 @@ define([
     var payload = {};    
     var schemas = [];  
     let variableActivity = [];
+    let phone;
     let mapLabelValue = new Map();
     $(window).ready(onRender);
     
@@ -26,7 +27,11 @@ define([
             schemas = data['schema'];
             console.log(schemas);
             for(var i = 0; i < data['schema'].length; i++) {
-                mapLabelValue.set(data['schema'][i].key.split('.')[2],data['schema'][i].key);           
+                mapLabelValue.set(data['schema'][i].key.split('.')[2],data['schema'][i].key);
+                if(data['schema'][i].type === 'Phone'){
+                    phone = split[0] + '.' +  split[1] +'.\"' + split[2] + '\"';
+                console.log(phone);
+               }       
             }
             
             console.log(mapLabelValue);
@@ -86,7 +91,6 @@ define([
         let message = document.getElementById("textarea").value
         if(variable1 != ""){
             message = message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
-            console.log()
         }
         if(variable2 != ""){
             message = message.replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
@@ -100,7 +104,8 @@ define([
         if(variable5 != ""){
             message = message.replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
         }
-        console.log($("#textarea").val())
+        console.log(message)
+        console.log(phone)
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
