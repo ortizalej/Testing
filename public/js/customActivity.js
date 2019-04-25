@@ -83,10 +83,15 @@ define([
         let variable3 = document.getElementById("variable3").value
         let variable4 = document.getElementById("variable4").value
         let variable5 = document.getElementById("variable5").value
+        let message = document.getElementById("textarea").value
+        console.log(message);
+        message.replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
+        console.log(message)
         if(variable1 != ""){
             console.log('paso', mapLabelValue.get(variable1));
             console.log('%%'+ variable1 + '%%');
             $("#textarea").val().replace('%%'+ variable1 + '%%', '{{' +  mapLabelValue.get(variable1) + '}}')
+            console.log()
         }
         if(variable2 != ""){
             $("#textarea").val().replace('%%'+ variable2 + '%%','{{' +   mapLabelValue.get(variable2) + '}}')
