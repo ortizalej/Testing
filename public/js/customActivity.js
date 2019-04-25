@@ -100,6 +100,7 @@ define([
         if(variable5 != ""){
             $("#textarea").val().replace('%%'+ variable5 + '%%', '{{' +  mapLabelValue.get(variable5) + '}}')
         }
+        console.log($("#textarea").val())
         payload['arguments'].execute.inArguments = [{
             "tokens": authTokens,
             "phone": '{{' + phone + '}}',
